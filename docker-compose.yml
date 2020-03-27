@@ -1,0 +1,17 @@
+version: '3.4'
+services: 
+
+  app1:
+    build:
+      dockerfile: .
+      context: .
+    image: glaubersk/analisefraude
+    container_name: app1
+    ports:
+      - "80:8080"
+    networks:
+      - prod
+
+networks:
+  prod:
+    driver: bridge
