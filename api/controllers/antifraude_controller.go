@@ -7,13 +7,15 @@ import (
 
 	"github.com/glaubergoncalves/analise/api/models"
 	"github.com/glaubergoncalves/analise/api/responses"
+	"github.com/glaubergoncalves/analise/api/services"
 )
 
 func Analise(w http.ResponseWriter, r *http.Request) {
 
 	venda, _ := extraiDadosDoRequest(w, r)
+	analise := services.AnaliseFraudeService(venda)
 
-	responses.JSON(w, http.StatusOK, venda)
+	responses.JSON(w, http.StatusOK, analise)
 }
 
 func extraiDadosDoRequest(w http.ResponseWriter, r *http.Request) (models.Venda, error) {

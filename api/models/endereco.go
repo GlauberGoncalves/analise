@@ -5,6 +5,7 @@ type Endereco struct {
 	Numero      uint32 `json:"numero"`
 	Complemento string `json:"complemento"`
 	Cidade      string `json:"cidade"`
-	estado      string `json:"cidade"`
-	cep         string `json:cep`
+	Estado      string `json:"cidade"`
+	Pais      	string `json:"pais"`
+	Cep         uint32 `json:cep`
 }
