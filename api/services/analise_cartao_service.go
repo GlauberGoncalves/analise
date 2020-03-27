@@ -14,6 +14,5 @@ func ValidaCartaoCredito(cartao models.Cartao) (bool, error) {
 	if err != nil {
 		return false, errors.New("Dados do cartão são invalidos: " + err.Error())
 	}
-
 	return true, nil
 }
